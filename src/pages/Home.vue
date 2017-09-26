@@ -10,37 +10,37 @@
         <Button type="ghost">
             <img src="../assets/img/photo.jpg" height="30" alt="">Admin
             <Icon type="arrow-down-b"></Icon>
-        </Button> 
+        </Button>
         <Dropdown-menu slot="list">
             <Dropdown-item divided><i class="fa fa-key"></i>Log out</Dropdown-item>
             <Dropdown-item divided><i class="fa fa-cog"></i>Setting</Dropdown-item>
         </Dropdown-menu>
       </Dropdown>
-    </Row>   
+    </Row>
     <div class="sidebar">
       <Menu theme="dark" width="100%" class="menu">
           <Menu-item name="1">
               <router-link to="/">
                 <i class="fa fa-dashboard"></i>
-                Dashboard  
+                Dashboard
               </router-link>
           </Menu-item>
           <Menu-item name="2">
               <router-link to="/widget">
                 <i class="fa fa-cogs"></i>
-                Widget  
+                Widget
               </router-link>
           </Menu-item>
           <Menu-item name="3">
               <router-link to="/imagelist">
                 <i class="fa fa-photo"></i>
-                Image List  
+                Image List
               </router-link>
           </Menu-item>
           <Menu-item name="4">
               <router-link to="/charts">
                 <i class="fa fa-bar-chart"></i>
-                Charts  
+                Charts
               </router-link>
           </Menu-item>
           <Submenu name="5">
@@ -50,12 +50,12 @@
               </template>
               <Menu-item name="5-1">
                 <router-link to="/basic-table">
-                  Basic Table 
+                  Basic Table
                 </router-link>
               </Menu-item>
               <Menu-item name="5-2">
                 <router-link to="/editable-table">
-                  Editable Table  
+                  Editable Table
                 </router-link>
               </Menu-item>
           </Submenu>
@@ -66,20 +66,60 @@
               </template>
               <Menu-item name="6-1">
                 <router-link to="/login">
-                  Login 
+                  Login
                 </router-link>
               </Menu-item>
               <Menu-item name="6-2">
                 <router-link to="/lockscreen">
-                  Lockscreen 
+                  Lockscreen
                 </router-link>
               </Menu-item>
           </Submenu>
+
+        <Submenu name="7">
+          <template slot="title">
+            <i class="fa fa-file"></i>
+             订单管理
+          </template>
+          <Menu-item name="7-1">
+            <router-link to="/need-confirmed">
+              待确认
+            </router-link>
+          </Menu-item>
+          <Menu-item name="7-2">
+            <router-link to="/need-deliver">
+              待发货
+            </router-link>
+          </Menu-item>
+          <Menu-item name="7-3">
+            <router-link to="/done-deliver">
+              已发货
+            </router-link>
+          </Menu-item>
+          <Menu-item name="7-4">
+            <router-link to="/order-completed">
+              已完成
+            </router-link>
+          </Menu-item>
+          <Menu-item name="7-5">
+            <router-link to="/order-canceled">
+              已取消
+            </router-link>
+          </Menu-item>
+          <Menu-item name="7-6">
+            <router-link to="/order-abnormal">
+              异常单
+            </router-link>
+          </Menu-item>
+        </Submenu>
+
+
+
       </Menu>
     </div>
     <div class="main-content">
-      <router-view></router-view> 
-      <p class="vm-author">vue-manager designed by <a href="https://github.com/luosijie" target="_blank">Jesse Luo</a></p> 
+      <router-view></router-view>
+      <p class="vm-author">vue-manager designed by <a href="https://github.com/luosijie" target="_blank">Jesse Luo</a></p>
     </div>
   </div>
   </div>

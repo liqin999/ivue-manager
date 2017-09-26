@@ -9,6 +9,7 @@ import ImageList from '@/pages/ImageList'
 import Charts from '@/pages/Charts'
 import Login from '@/pages/Login'
 import LockScreen from '@/pages/LockScreen'
+import needConfirmed from '@/pages/needConfirmed'
 
 Vue.use(Router)
 
@@ -47,6 +48,10 @@ export default new Router({
           path: 'charts',
           name: 'Charts',
           component: Charts
+        },{
+           path:"need-confirmed",
+           name:"need-confirmed",
+           component: needConfirmed
         }
       ]
     },
