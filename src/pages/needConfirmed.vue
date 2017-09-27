@@ -12,8 +12,86 @@
         <a>已完成(10)</a>
         <a>已取消(10)</a>
         <a>异常单(10)</a>
+        <a>退换货订单</a>
       </Col>
     </Row>
+
+    <Row class="filterItem">
+      <Col span="3" class="pr10">送货地区:</Col>
+      <Col span="21" class="filterInfo">
+           <Cascader class="ml10" :data="city_data" v-model="address_value" style="width: 300px;"></Cascader>
+      </Col>
+    </Row>
+
+    <Row class="filterItem">
+      <Col span="3" class="pr10">支付类型:</Col>
+      <Col span="21" class="filterInfo">
+      <a>全部</a>
+      <a>在线支付</a>
+      <a>货到付款</a>
+      </Col>
+    </Row>
+
+    <Row class="filterItem">
+      <Col span="3" class="pr10">支付状态:</Col>
+      <Col span="21" class="filterInfo">
+      <a>全部</a>
+      <a>待支付</a>
+      <a>部分支付</a>
+      <a>已支付</a>
+      </Col>
+    </Row>
+
+    <Row class="filterItem">
+      <Col span="3" class="pr10">配送方式:</Col>
+      <Col span="21" class="filterInfo">
+      <a>货到付款了</a>
+      <a>EMS</a>
+      <a>顺丰快递</a>
+      <a>自提</a>
+      <a>宅急送</a>
+      </Col>
+    </Row>
+
+    <Row class="filterItem">
+      <Col span="3" class="pr10">订购类型:</Col>
+      <Col span="21" class="filterInfo">
+      <a>全部</a>
+      <a>积分换礼</a>
+      <a>定金</a>
+      <a>兑换</a>
+      </Col>
+    </Row>
+
+    <Row class="filterItem">
+      <Col span="3" class="pr10">订购时间:</Col>
+      <Col span="21" class="filterInfo">
+      <a>全部</a>
+      <a>本周</a>
+      <a>本月</a>
+      <a>本季度</a>
+      </Col>
+    </Row>
+
+    <Row class="filterItem">
+      <Col span="3" class="pr10">是否有发票:</Col>
+      <Col span="21" class="filterInfo">
+      <a>全部</a>
+      <a>是</a>
+      <a>否</a>
+      </Col>
+    </Row>
+
+    <Row class="filterItem">
+      <Col span="3" class="pr10">电子面单打印状态:</Col>
+      <Col span="21" class="filterInfo">
+      <a>全部</a>
+      <a>是</a>
+      <a>否</a>
+      </Col>
+    </Row>
+
+
 
     <VmTable title="Editable Table"
              type="edit"
@@ -29,7 +107,11 @@
 
 <script>
   import VmTable from '@/components/vm-table'
+  import citys from '@/utils/citys'
   export default {
+    mounted:function(){//引入地址插件
+      //console.log(citys.regions)
+    },
     name: 'EditableTable',
     components: {
       VmTable
@@ -59,6 +141,8 @@
     },
     data () {
       return {
+        address_value:"",
+        city_data:citys.regions,
         dataColumns: [
           {
             id: '20156541',
@@ -162,8 +246,10 @@
 <style scoped>
   /*公共样式*/
   .pr10{padding-right: 10px}
+  .ml10{
+    margin-left: 10px;}
  /*当前页面样式*/
-  .filterItem{background-color: #fff;padding: 10px 0px}
+  .filterItem{;text-align:right;background-color: #fff;padding: 10px 0px}
   .filterInfo{text-align: left}
   .filterInfo a{padding: 0 10px}
 </style>
