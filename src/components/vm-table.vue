@@ -20,11 +20,17 @@
           <Button type="ghost" @click="search"><i class="fa fa-search"></i></Button>
         </div>
       </Row>
+
+
       <div class="edit" v-if="type === 'edit'">
-          <Button @click="modalAdd = true" ><i class="fa fa-plus"></i> Add</Button>
+          <Button @click="modalAdd = true" ><i class="fa fa-plus"></i> Add1</Button>
           <Button  :disabled="deleteDisabled" @click="modalDelete = true"><i class="fa fa-trash"></i> Delete</Button>
       </div>
+
+
+
       <Table :stripe="showStripe" :size="tableSize" :columns="showColumns" :data="dataShow" @on-selection-change="selectChange"></Table>
+
       <Row type="flex" justify="space-between" class="footer">
         <div class="info-bar">
           Show<Input-number class="input-number" v-model="showNum" :max="data.length" :min="1" @on-change=" updateDataShow ">{{ showNum }}</Input-number>/ Page
@@ -35,6 +41,7 @@
         </div>
       </Row>
     </div>
+
     <Modal
         v-model="modalEdit"
         title="Edit"
@@ -47,6 +54,7 @@
           </Form-item>
         </Form>
     </Modal>
+
     <Modal
         v-model="modalAdd"
         title="Add"
@@ -59,6 +67,7 @@
           </Form-item>
         </Form>
     </Modal>
+
     <Modal
         v-model="modalDelete"
         title="Delete"
@@ -117,7 +126,7 @@
       updateDataShow: function () {
         let startPage = (this.currentPage - 1) * this.showNum
         let endPage = startPage + this.showNum
-        this.dataShow = this.data.slice(startPage, endPage)
+        this.dataShow = this.data.slice(startPage, endPage);//前台展示分页
       },
       search: function () {
         let that = this
@@ -138,7 +147,8 @@
       remove: function (index) {
         this.dataShow.splice(index, 1)
       },
-      renderOperate: function (h, params) {
+      renderOperate: function (h, params) {//操作项目  增加列的项目
+        // param是操作的每一项行  
         return h('div', [
           h('Button', {
             props: {
@@ -149,12 +159,13 @@
               marginRight: '5px'
             },
             on: {
-              click: () => {
+              click: () => {//点击每一个列的按钮触发的事件  在点击的时候 可以写路由的跳转 导航钩子的name 进行页面的跳转   
+                console.log(params)// params 是每一个列的内容项
                 for (let i in params.row) {
                   this.dataEdit[i] = params.row[i]
                 }
                 delete this.dataEdit._index
-                this.modalEdit = true
+                this.modalEdit = true;//调用弹框事件
               }
             }
           }, 'Edit'),
@@ -196,12 +207,12 @@
             width: 60,
             align: 'center'
           })
-          showColumn.push({
-            title: '操作',
+          showColumn.push({// 进行列的增加项目  
+            title: '操作1',
             key: 'action',
             width: 150,
             align: 'center',
-            render: this.renderOperate
+            render: this.renderOperate// 列中的字段
           })
         }
         return showColumn

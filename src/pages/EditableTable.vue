@@ -44,7 +44,7 @@
         dataColumns: [
           {
             id: '20156541',
-            title: '编号',
+            title: '编号1',
             key: 'id'
           },
           {
