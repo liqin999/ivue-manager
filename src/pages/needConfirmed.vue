@@ -3,7 +3,7 @@
   <div>
     <Row class="filterItem">
       <Col span="3" class="pr10">订单状态:</Col>
-      <Col span="21" class="filterInfo">
+      <Col span="18" class="filterInfo">
         <a>全部</a>
         <a>待确认(10)</a>
         <a>待发货(10)</a>
@@ -14,7 +14,22 @@
         <a>异常单(10)</a>
         <a>退换货订单</a>
       </Col>
+      <Col span="3" class="pr10 text-left" v-show="!isShowFilter" >
+        <Button type="text" @click="fnshowFilter()">
+          展开
+          <Icon type="ios-arrow-down"></Icon>
+        </Button>
+      </Col>
+
+      <Col span="3" class="pr10 text-left" v-show="isShowFilter">
+        <Button type="text"  @click="fnshowFilter()">
+        收缩
+        <Icon type="ios-arrow-up"></Icon>
+        </Button>
+      </Col>
     </Row>
+
+  <div v-show="isShowFilter">
 
     <Row class="filterItem">
       <Col span="3" class="pr10">送货地区:</Col>
@@ -90,10 +105,11 @@
       <a>否</a>
       </Col>
     </Row>
+  </div>
 
 
 
-    <VmTable title="Editable Table"
+    <VmTable title="产品管理"
              type="edit"
              :columns="dataColumns"
              :data="dataTable"
@@ -117,7 +133,11 @@
       VmTable
     },
     methods: {
-      add: function (data) {
+      fnshowFilter: function () {
+
+        this.isShowFilter = !this.isShowFilter;
+      },
+      add: function (data) {//添加的时候 向开头增加
         this.dataTable.unshift(data)
       },
       edit: function (data) {
@@ -141,6 +161,7 @@
     },
     data () {
       return {
+        isShowFilter:false,
         address_value:"",
         city_data:citys.regions,
         dataColumns: [
@@ -246,10 +267,13 @@
 <style scoped>
   /*公共样式*/
   .pr10{padding-right: 10px}
-  .ml10{
-    margin-left: 10px;}
+  .ml10{ margin-left: 10px;}
+  .text-left{text-align: left}
+  .text-right{text-align: right}
+
  /*当前页面样式*/
   .filterItem{;text-align:right;background-color: #fff;padding: 10px 0px}
   .filterInfo{text-align: left}
   .filterInfo a{padding: 0 10px}
+
 </style>
