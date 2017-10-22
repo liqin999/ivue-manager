@@ -107,8 +107,6 @@
     </Row>
   </div>
 
-
-
     <VmTable title="产品管理"
              type="edit"
              :columns="dataColumns"
@@ -166,99 +164,103 @@
         city_data:citys.regions,
         dataColumns: [
           {
-            id: '20156541',
-            title: '编号13123',
+            id: '1',
+            title: '缩略图',
+            key: 'thumb'
+          },
+          {
+            id: '2',
+            title: '产品名称',
+            key: 'proname'
+          },
+          {
+            id: '3',
+            title: '编号',
             key: 'id'
           },
           {
-            id: '20156542',
-            title: '姓名31231',
-            key: 'name'
+            id: '4',
+            title: '所属分类',
+            key: 'classify'
           },
           {
-            id: '20156543',
-            title: '年龄312313',
-            key: 'age'
+            id: '5',
+            title: '零售价',
+            key: 'price'
           },
           {
-            id: '20156544',
-            title: '地址3123',
-            key: 'address'
+            id: '6',
+            title: '发布日期',
+            key: 'publishdate'
           }
+
         ],
         dataTable: [
           {
-            id: '65416s843154',
-            name: '王小明',
-            age: 18,
-            address: '北京市朝阳区芍药居'
+            thumb: '65416s843154',
+            proname: '65416s843154',
+            id: '111',
+            classify: '裤子',
+            price: '120',
+            publishdate: '2017-10-22',
           },
           {
-            id: '6541684q6534',
-            name: '张小刚',
-            age: 25,
-            address: '北京市海淀区西二旗'
+            thumb: '65416s843154',
+            proname: '65416s843154',
+            id: '222',
+            classify: '裤子',
+            price: '120',
+            publishdate: '2017-10-22',
           },
           {
-            id: '65416843f194',
-            name: '李小红',
-            age: 30,
-            address: '上海市浦东新区世纪大道'
+            thumb: '65416s843154',
+            proname: '65416s843154',
+            id: '333',
+            classify: '裤子',
+            price: '120',
+            publishdate: '2017-10-22',
           },
           {
-            id: '6541g6843150',
-            name: '周小伟',
-            age: 26,
-            address: '深圳市南山区深南大道'
+            thumb: '65416s843154',
+            proname: '65416s843154',
+            id: '444',
+            classify: '裤子',
+            price: '120',
+            publishdate: '2017-10-22',
           },
           {
-            id: '6541h6843150',
-            name: '张小刚',
-            age: 25,
-            address: '北京市海淀区西二旗'
+            thumb: '65416s843154',
+            proname: '65416s843154',
+            id: '555',
+            classify: '裤子',
+            price: '120',
+            publishdate: '2017-10-22',
           },
           {
-            id: '65416v843114',
-            name: '李小红',
-            age: 30,
-            address: '上海市浦东新区世纪大道'
+            thumb: '65416s843154',
+            proname: '65416s843154',
+            id: '666',
+            classify: '裤子',
+            price: '120',
+            publishdate: '2017-10-22',
           },
           {
-            id: '65416843g114',
-            name: '周小伟',
-            age: 26,
-            address: '深圳市南山区深南大道'
+            thumb: '65416s843154',
+            proname: '65416s843154',
+            id: '777',
+            classify: '裤子',
+            price: '120',
+            publishdate: '2017-10-22',
           },
           {
-            id: '254168431d54',
-            name: '李小红',
-            age: 30,
-            address: '上海市浦东新区世纪大道'
+            thumb: '65416s843154',
+            proname: '65416s843154',
+            id: '888',
+            classify: '裤子',
+            price: '120',
+            publishdate: '2017-10-22',
           },
-          {
-            id: '65456843d154',
-            name: '周小伟',
-            age: 26,
-            address: '深圳市南山区深南大道'
-          },
-          {
-            id: '654168431d14',
-            name: '张小刚',
-            age: 25,
-            address: '北京市海淀区西二旗'
-          },
-          {
-            id: '65416343s154',
-            name: '李小红',
-            age: 30,
-            address: '上海市浦东新区世纪大道'
-          },
-          {
-            id: '65419843f154',
-            name: '周小伟',
-            age: 26,
-            address: '深圳市南山区深南大道'
-          }
+
         ]
       }
     }

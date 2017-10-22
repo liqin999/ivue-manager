@@ -5,16 +5,6 @@
     </div>
     <div class="panel-body">
       <Row type="flex" justify="space-between" class="control">
-        <div class="table-style">
-          <h3>Stripe</h3>
-          <i-switch v-model="showStripe" style="margin: 0 30px 0 10px"></i-switch>
-          <h3>Size</h3>
-          <Radio-group v-model="tableSize" type="button" style="margin-left: 10px">
-            <Radio label="large">Large</Radio>
-            <Radio label="default">Default</Radio>
-            <Radio label="small">Small</Radio>
-          </Radio-group>
-        </div>
         <div class="search-bar">
           <Input placeholder="Please enter ..." v-model="keyword" style="width: 300px"></Input>
           <Button type="ghost" @click="search"><i class="fa fa-search"></i></Button>
@@ -23,8 +13,8 @@
 
 
       <div class="edit" v-if="type === 'edit'">
-          <Button @click="modalAdd = true" ><i class="fa fa-plus"></i> Add1</Button>
-          <Button  :disabled="deleteDisabled" @click="modalDelete = true"><i class="fa fa-trash"></i> Delete</Button>
+          <Button @click="modalAdd = true" ><i class="fa fa-plus"></i> 添加产品</Button>
+          <Button  :disabled="deleteDisabled" @click="modalDelete = true"><i class="fa fa-trash"></i> 删除</Button>
       </div>
 
 
@@ -148,7 +138,7 @@
         this.dataShow.splice(index, 1)
       },
       renderOperate: function (h, params) {//操作项目  增加列的项目
-        // param是操作的每一项行  
+        // param是操作的每一项行
         return h('div', [
           h('Button', {
             props: {
@@ -159,7 +149,7 @@
               marginRight: '5px'
             },
             on: {
-              click: () => {//点击每一个列的按钮触发的事件  在点击的时候 可以写路由的跳转 导航钩子的name 进行页面的跳转   
+              click: () => {//点击每一个列的按钮触发的事件  在点击的时候 可以写路由的跳转 导航钩子的name 进行页面的跳转
                 console.log(params)// params 是每一个列的内容项
                 for (let i in params.row) {
                   this.dataEdit[i] = params.row[i]
@@ -207,7 +197,7 @@
             width: 60,
             align: 'center'
           })
-          showColumn.push({// 进行列的增加项目  
+          showColumn.push({// 进行列的增加项目
             title: '操作1',
             key: 'action',
             width: 150,
